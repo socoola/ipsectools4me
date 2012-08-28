@@ -1,0 +1,22 @@
+---- timer Matches (23 in 7 files) ----
+Cfparse.c (racoon):  "timer_statement", "timer_stmts", "timer_stmt", "$@64", "$@65", "$@66",
+Cftoken.c (racoon):/* timer */
+Handler.c (racoon):	timersub(&now, &r->time_send, &diff);
+Handler.c (racoon):	timersub(&now, &diff, &sweep);
+Handler.c (racoon):		if (timercmp(&r->time_send, &sweep, <)) {
+Handler.h (racoon):					/* NOTE: actually it's timer. */
+Pfkey.c (racoon):	/* turn off the timer for calling pfkey_timeover() */
+Pfkey.c (racoon):	/* turn off the timer for calling isakmp_ph2expire() */
+Pfkey.c (racoon):			/* Turn off expiration timer ...*/
+Schedule.c (racoon):	timersub(now, tv, &res);
+Schedule.c (racoon):		timercmp(&TAILQ_FIRST(&sctree)->xtime, &now, <=)) {
+Schedule.c (racoon):	timersub(&p->xtime, &now, &timeout);
+Schedule.c (racoon):	timeradd(&now, &sc->tick, &sc->xtime);
+Schedule.c (racoon):		if (timercmp(&sc->xtime, &p->xtime, <))
+Schedule.c (racoon):		timersub(&p->xtime, &p->tick, &created);
+Throttle.c (racoon):	timeradd(&now, &penalty, &te->penalty_ends);
+Throttle.c (racoon):		if (timercmp(&te->penalty_ends, &now, <)) {
+Throttle.c (racoon):			timersub(&te->penalty_ends, &now, &remaining);
+Throttle.c (racoon):			timeradd(&penalty, &remaining, &res);
+Throttle.c (racoon):			timeradd(&now, &res, &te->penalty_ends);
+Throttle.c (racoon):	timersub(&te->penalty_ends, &now, &res);
